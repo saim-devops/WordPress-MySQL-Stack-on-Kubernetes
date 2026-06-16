@@ -1,14 +1,39 @@
-kind: PersistentVolume
 apiVersion: v1
+kind: PersistentVolume
+
 metadata:
-  name: local-pv
-  namespace: wordpress
+  name: local-pv-wp
+
 spec:
   capacity:
-    storage: 2Gi
+    storage: 1Gi
+
   accessModes:
   - ReadWriteOnce
+
   persistentVolumeReclaimPolicy: Retain
+
   storageClassName: manual
+
   hostPath:
-    path: /mnt/data
+    path: /mnt/data/wp
+---
+apiVersion: v1
+kind: PersistentVolume
+
+metadata:
+  name: local-pv-mysql
+
+spec:
+  capacity:
+    storage: 1Gi
+
+  accessModes:
+  - ReadWriteOnce
+
+  persistentVolumeReclaimPolicy: Retain
+
+  storageClassName: manual
+
+  hostPath:
+    path: /mnt/data/mysql

@@ -1,6 +1,9 @@
-kind: ConfigMap
 apiVersion: v1
+kind: ConfigMap
 metadata:
-  name: wordpress-configMap
+  name: wordpress-configmap
   namespace: wordpress
-data: WORDPRESS_DB_HOST= mysql:3306 WORDPRESS_DB_NAME= wp_db
+
+data:
+  WORDPRESS_DB_HOST: mysql:3306
+  WORDPRESS_DB_NAME: wp_db
