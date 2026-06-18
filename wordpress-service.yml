@@ -1,0 +1,16 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: wordpress-service
+  namespace: wordpress
+
+spec:
+  selector:
+    app: wordpress
+
+  ports:
+  - name: wordpress-port
+    protocol: TCP
+    port: 880
+    targetPort: 80
+  type: ClusterIP
